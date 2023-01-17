@@ -11,6 +11,7 @@
 Map<Integer, List<Integer>> adj = new HashMap<>();
 for (int[] edge : edges) {
   int a = edge[0], b = edge[1];
+  //computeIfAbsent方法返回key对应的value, 如果没有对应关系返回null
   adj.computeIfAbsent(a, value -> new ArrayList<Integer>()).add(b);
   adj.computeIfAbsent(b, value -> new ArrayList<Integer>()).add(a);
 }
